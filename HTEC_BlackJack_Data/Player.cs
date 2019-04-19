@@ -4,41 +4,66 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+public enum PlayerState
+{
+    Won,
+    Lost,
+    Playing
+}
+
 namespace HTEC_BlackJack_Data
 {
-    public class Player
+    public class Player : AbstractPlayer
     {
         private String _name { get; }
-        private List<Card> _hand;
-        private bool _finished;
+        public int Score { get; private set; }
+        public bool FinishedDrawing { get; private set; }
+        public PlayerState Round { get; set; }
 
-        public bool Finished
-        {
-            get { return _finished; }
-        }
+        public String Name { get { return _name; } }
 
         public Player(String name)
         {
+            Score = 0;
             _name = name;
             _hand = new List<Card>();
-            _finished = false;
-        }
-        public void addCardToHand(Card drawnCard)
-        {
-            _hand.Add(drawnCard);
+            FinishedDrawing = false;
+            Round = PlayerState.Playing;
         }
 
-        public void finish()
+        public override void ReturnCards()
         {
-            _finished = true;
+            Round = PlayerState.Playing;
+            FinishedDrawing = false;
+            base.ReturnCards();
         }
 
-        public int showSum()
+        public void FinishRound()
         {
-            int sum = 0;
-            foreach (var c in _hand)
-                sum += c.CardValue();
-            return sum;
+            FinishedDrawing = true;
+            CheckSum();
+        }
+
+        public void CheckSum()
+        {
+            if (Sum < 21)
+                return;
+            else if (Sum == 21)
+            {
+                Round = PlayerState.Won;
+                Score += 10;
+            }
+            else
+            {
+                Round = PlayerState.Lost;
+                Score += -3;
+            }
+            FinishedDrawing = true;
+        }
+
+        public void AddPoints(int wonPoints)
+        {
+            Score += wonPoints;
         }
     }
 }

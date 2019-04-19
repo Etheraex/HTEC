@@ -46,12 +46,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BlackJack.cs">
+    <Compile Include="BlackjackForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="BlackJack.Designer.cs">
-      <DependentUpon>BlackJack.cs</DependentUpon>
+    <Compile Include="BlackjackForm.Designer.cs">
+      <DependentUpon>BlackjackForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Blackjack.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="StartupForm.cs">
@@ -60,8 +61,8 @@
     <Compile Include="StartupForm.Designer.cs">
       <DependentUpon>StartupForm.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="BlackJack.resx">
-      <DependentUpon>BlackJack.cs</DependentUpon>
+    <EmbeddedResource Include="BlackjackForm.resx">
+      <DependentUpon>BlackjackForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

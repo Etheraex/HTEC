@@ -17,10 +17,10 @@ namespace HTEC_BlackJack
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void StartBtn_Click(object sender, EventArgs e)
         {
-            var numPlayers = Convert.ToInt32(Math.Round(numericUpDown1.Value, 0));
-            Form f = new BlackJack(this,numPlayers);
+            var numPlayers = Convert.ToInt32(Math.Round(NumberPlayers.Value, 0));
+            Form f = new BlackjackForm(this,numPlayers);
             this.Hide();
             f.ShowDialog();
         }

@@ -9,11 +9,11 @@ namespace HTEC_BlackJack_Data
 {
     public class Deck
     {
-        List<Card> _deck;
+        List<Card> _deckCards;
 
         private Deck()
         {
-            _deck = new List<Card>();
+            _deckCards = new List<Card>();
             LoadDeck();
         }
 
@@ -21,32 +21,36 @@ namespace HTEC_BlackJack_Data
         {
             foreach (String f in Directory.GetFiles("../../../Data/Cards.", "*.png"))
             {
-                _deck.Add(new Card(f));
+                _deckCards.Add(new Card(f));
             }
             Shuffle();
         }
 
-        private void Shuffle()
+        public void Shuffle()
         {
             List<Card> randomList = new List<Card>();
 
             Random r = new Random();
             int randomIndex = 0;
-            while (_deck.Count > 0)
+            while (_deckCards.Count > 0)
             {
-                randomIndex = r.Next(0, _deck.Count);
-                randomList.Add(_deck[randomIndex]);
-                _deck.RemoveAt(randomIndex);
+                randomIndex = r.Next(0, _deckCards.Count);
+                randomList.Add(_deckCards[randomIndex]);
+                _deckCards.RemoveAt(randomIndex);
             }
-            _deck = randomList;
+            _deckCards = randomList;
         }
 
         public Card getCard()
         {
-            Card card = _deck[_deck.Count-1];
-            _deck.RemoveAt(_deck.Count - 1);
+            Card card = _deckCards[_deckCards.Count-1];
+            _deckCards.RemoveAt(_deckCards.Count - 1);
             return card;
+        }
 
+        public void ReturnCard(Card c)
+        {
+            _deckCards.Add(c);
         }
 
         private static Deck _deckInstance = null;

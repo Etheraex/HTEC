@@ -74,11 +74,11 @@ namespace HTEC_BlackJack_Data
                         case "A":
                             return 11;
                         case "J":
-                            return 12;
+                            return 10;
                         case "Q":
-                            return 13;
+                            return 10;
                         case "K":
-                            return 14;
+                            return 10;
                     }
             }
             return 0;

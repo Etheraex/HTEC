@@ -42,9 +42,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AbstractPlayer.cs" />
     <Compile Include="Card.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Dealer.cs" />
     <Compile Include="Deck.cs" />
     <Compile Include="Player.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
