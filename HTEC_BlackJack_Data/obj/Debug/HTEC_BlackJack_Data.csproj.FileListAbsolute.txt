@@ -1,0 +1,6 @@
+C:\Users\Mladen\source\repos\HTEC_BlackJack\HTEC_BlackJack_Data\bin\Debug\HTEC_BlackJack_Data.dll
+C:\Users\Mladen\source\repos\HTEC_BlackJack\HTEC_BlackJack_Data\bin\Debug\HTEC_BlackJack_Data.pdb
+C:\Users\Mladen\source\repos\HTEC_BlackJack\HTEC_BlackJack_Data\obj\Debug\HTEC_BlackJack_Data.csprojAssemblyReference.cache
+C:\Users\Mladen\source\repos\HTEC_BlackJack\HTEC_BlackJack_Data\obj\Debug\HTEC_BlackJack_Data.csproj.CoreCompileInputs.cache
+C:\Users\Mladen\source\repos\HTEC_BlackJack\HTEC_BlackJack_Data\obj\Debug\HTEC_BlackJack_Data.dll
+C:\Users\Mladen\source\repos\HTEC_BlackJack\HTEC_BlackJack_Data\obj\Debug\HTEC_BlackJack_Data.pdb
