@@ -21,7 +21,7 @@ namespace HTEC_BlackJack_Data
 
         private void LoadDeck()
         {
-            foreach (String f in Directory.GetFiles("../../../Data/Cards.", "*.png"))
+            foreach (String f in Directory.GetFiles("Data/Cards.", "*.png"))
             {
                 _deckCards.Add(new Card(f));
             }

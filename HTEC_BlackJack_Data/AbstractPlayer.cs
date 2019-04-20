@@ -9,24 +9,18 @@ namespace HTEC_BlackJack_Data
     public abstract class AbstractPlayer
     {
         protected List<Card> _hand;
-        protected int _sum;
 
         public List<Card> Hand
         {
             get { return _hand; }
         }
 
-        public AbstractPlayer(int sum)
-        {
-            sum = 0;
-        }
-
         public int Sum
         {
-            get { return _sum; }
+            get { return CalculateSum(); }
         }
 
-        public void CalculateSum()
+        public int CalculateSum()
         {
             int sum = 0;
             foreach (var c in _hand)
@@ -41,7 +35,7 @@ namespace HTEC_BlackJack_Data
                 if (value == 11 && sum > 21)
                     sum -= 10;
             }
-            _sum = sum;
+            return sum;
         }
 
         public void addCardToHand(Card drawnCard)

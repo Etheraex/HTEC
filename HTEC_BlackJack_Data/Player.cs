@@ -14,17 +14,17 @@ public enum PlayerState
 
 namespace HTEC_BlackJack_Data
 {
-    public class Player : AbstractPlayer
+    public class Player : AbstractPlayer, IComparable<Player>
     {
-        private String _name { get; }
+        private String _name;
         public int Score { get; private set; }
         public bool FinishedDrawing { get; private set; }
-        public PlayerState Round { get; set; }
+        public PlayerState Round { get; private set; }
 
         public String Name { get { return _name; } }
         public int HandCount { get { return _hand.Count; } }
 
-        public Player(String name, int sum, int score) : base(sum)
+        public Player(String name, int score)
         {
             Score = score;
             _name = name;
@@ -66,6 +66,16 @@ namespace HTEC_BlackJack_Data
         public void AddPoints(int wonPoints)
         {
             Score += wonPoints;
+        }
+
+        public override string ToString()
+        {
+            return Name + " " + Score.ToString();
+        }
+
+        public int CompareTo(Player other)
+        {
+            return Score.CompareTo(other.Score);
         }
     }
 }

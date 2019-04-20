@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             this.p1 = new System.Windows.Forms.Label();
             this.p6 = new System.Windows.Forms.Label();
             this.p2 = new System.Windows.Forms.Label();
@@ -42,14 +41,12 @@
             this.p5Name = new System.Windows.Forms.TextBox();
             this.p4Name = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
-            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
-            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // p1
             // 
             this.p1.AutoSize = true;
-            this.p1.Location = new System.Drawing.Point(46, 56);
+            this.p1.Location = new System.Drawing.Point(43, 39);
             this.p1.Name = "p1";
             this.p1.Size = new System.Drawing.Size(43, 13);
             this.p1.TabIndex = 1;
@@ -58,7 +55,7 @@
             // p6
             // 
             this.p6.AutoSize = true;
-            this.p6.Location = new System.Drawing.Point(46, 255);
+            this.p6.Location = new System.Drawing.Point(43, 238);
             this.p6.Name = "p6";
             this.p6.Size = new System.Drawing.Size(43, 13);
             this.p6.TabIndex = 2;
@@ -68,7 +65,7 @@
             // p2
             // 
             this.p2.AutoSize = true;
-            this.p2.Location = new System.Drawing.Point(46, 96);
+            this.p2.Location = new System.Drawing.Point(43, 79);
             this.p2.Name = "p2";
             this.p2.Size = new System.Drawing.Size(43, 13);
             this.p2.TabIndex = 3;
@@ -77,7 +74,7 @@
             // p3
             // 
             this.p3.AutoSize = true;
-            this.p3.Location = new System.Drawing.Point(46, 141);
+            this.p3.Location = new System.Drawing.Point(43, 124);
             this.p3.Name = "p3";
             this.p3.Size = new System.Drawing.Size(43, 13);
             this.p3.TabIndex = 4;
@@ -87,7 +84,7 @@
             // p4
             // 
             this.p4.AutoSize = true;
-            this.p4.Location = new System.Drawing.Point(46, 180);
+            this.p4.Location = new System.Drawing.Point(43, 163);
             this.p4.Name = "p4";
             this.p4.Size = new System.Drawing.Size(43, 13);
             this.p4.TabIndex = 5;
@@ -97,7 +94,7 @@
             // p5
             // 
             this.p5.AutoSize = true;
-            this.p5.Location = new System.Drawing.Point(46, 220);
+            this.p5.Location = new System.Drawing.Point(43, 203);
             this.p5.Name = "p5";
             this.p5.Size = new System.Drawing.Size(43, 13);
             this.p5.TabIndex = 6;
@@ -106,21 +103,21 @@
             // 
             // p1Name
             // 
-            this.p1Name.Location = new System.Drawing.Point(125, 49);
+            this.p1Name.Location = new System.Drawing.Point(122, 32);
             this.p1Name.Name = "p1Name";
             this.p1Name.Size = new System.Drawing.Size(100, 20);
             this.p1Name.TabIndex = 7;
             // 
             // p2Name
             // 
-            this.p2Name.Location = new System.Drawing.Point(125, 89);
+            this.p2Name.Location = new System.Drawing.Point(122, 72);
             this.p2Name.Name = "p2Name";
             this.p2Name.Size = new System.Drawing.Size(100, 20);
             this.p2Name.TabIndex = 8;
             // 
             // p3Name
             // 
-            this.p3Name.Location = new System.Drawing.Point(122, 134);
+            this.p3Name.Location = new System.Drawing.Point(119, 117);
             this.p3Name.Name = "p3Name";
             this.p3Name.Size = new System.Drawing.Size(100, 20);
             this.p3Name.TabIndex = 9;
@@ -128,7 +125,7 @@
             // 
             // p6Name
             // 
-            this.p6Name.Location = new System.Drawing.Point(122, 255);
+            this.p6Name.Location = new System.Drawing.Point(119, 238);
             this.p6Name.Name = "p6Name";
             this.p6Name.Size = new System.Drawing.Size(100, 20);
             this.p6Name.TabIndex = 10;
@@ -136,7 +133,7 @@
             // 
             // p5Name
             // 
-            this.p5Name.Location = new System.Drawing.Point(122, 220);
+            this.p5Name.Location = new System.Drawing.Point(119, 203);
             this.p5Name.Name = "p5Name";
             this.p5Name.Size = new System.Drawing.Size(100, 20);
             this.p5Name.TabIndex = 11;
@@ -144,7 +141,7 @@
             // 
             // p4Name
             // 
-            this.p4Name.Location = new System.Drawing.Point(122, 180);
+            this.p4Name.Location = new System.Drawing.Point(119, 163);
             this.p4Name.Name = "p4Name";
             this.p4Name.Size = new System.Drawing.Size(100, 20);
             this.p4Name.TabIndex = 12;
@@ -152,17 +149,14 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(91, 299);
+            this.button1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.button1.Location = new System.Drawing.Point(0, 280);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.Size = new System.Drawing.Size(276, 54);
             this.button1.TabIndex = 13;
             this.button1.Text = "Start";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // errorProvider1
-            // 
-            this.errorProvider1.ContainerControl = this;
             // 
             // AddPlayersForm
             // 
@@ -185,7 +179,6 @@
             this.Name = "AddPlayersForm";
             this.Text = "AddPlayersForm";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.AddPlayersForm_FormClosing);
-            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -205,6 +198,5 @@
         private System.Windows.Forms.TextBox p5Name;
         private System.Windows.Forms.TextBox p4Name;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }

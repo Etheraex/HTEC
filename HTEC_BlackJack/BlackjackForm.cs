@@ -16,9 +16,9 @@ namespace HTEC_BlackJack
         private Form _sf;
         private Blackjack _data;
 
-        public BlackjackForm(Form sf, int numPlayers, List<Player> players)
+        public BlackjackForm(Form sf, int numPlayers, List<Player> players, List<int> names)
         {
-            _data = new Blackjack(this, numPlayers, players);
+            _data = new Blackjack(this, numPlayers, players, names);
             _sf = sf;
             InitializeComponent();
             _data.NextPlayer(true);
@@ -107,6 +107,7 @@ namespace HTEC_BlackJack
 
         private void BlackJack_FormClosing(object sender, FormClosingEventArgs e)
         {
+            _data.SaveToFile();
             _sf.Close();
         }
 

@@ -8,7 +8,7 @@ namespace HTEC_BlackJack_Data
 {
     public class Dealer : AbstractPlayer
     {
-        public Dealer(int sum) : base(sum)
+        public Dealer()
         {
             _hand = new List<Card>();
         }

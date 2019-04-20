@@ -4,8 +4,10 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -15,8 +17,13 @@ namespace HTEC_BlackJack
     {
         private Form _sf;
         private int _numberPlayers;
+        private List<Player> _players;
+        private List<int> _existingPlayers;
+
         public AddPlayersForm(StartupForm sf,int numberPlayers)
         {
+            _existingPlayers = new List<int>();
+            _players = new List<Player>();
             _numberPlayers = numberPlayers;
             _sf = sf;
             InitializeComponent();
@@ -56,24 +63,34 @@ namespace HTEC_BlackJack
             names.Add(p6Name.Text);
             if (CheckNames(0,names))
             {
-                List<Player> players = new List<Player>(_numberPlayers);
-                players.Add(new Player(names[0], 0, 0));
-                players.Add(new Player(names[1], 0, 0));
+                if(!FindPlayer(names[0]))
+                    _players.Add(new Player(names[0], 0));
+                if(!FindPlayer(names[1]))
+                    _players.Add(new Player(names[1], 0));
+
                 if (_numberPlayers >= 3)
                 {
-                    players.Add(new Player(names[2], 0, 0));
+                    if (!FindPlayer(names[2]))
+                        _players.Add(new Player(names[2], 0));
+
                     if (_numberPlayers >= 4)
                     {
-                        players.Add(new Player(names[3], 0, 0));
+                        if (!FindPlayer(names[3]))
+                            _players.Add(new Player(names[3], 0));
+
                         if (_numberPlayers >= 5)
                         {
-                            players.Add(new Player(names[4], 0, 0));
+                            if (!FindPlayer(names[4]))
+                                _players.Add(new Player(names[4], 0));
+
                             if (_numberPlayers == 6)
-                                players.Add(new Player(names[5], 0, 0));
+                                if (!FindPlayer(names[5]))
+                                    _players.Add(new Player(names[5], 0));
                         }
                     }
                 }
-                Form f = new BlackjackForm(_sf, _numberPlayers, players);
+
+                Form f = new BlackjackForm(_sf, _numberPlayers, _players, _existingPlayers);
                 this.Hide();
                 f.ShowDialog();
             }
@@ -81,6 +98,35 @@ namespace HTEC_BlackJack
             {
                 MessageBox.Show("Igraci moraju imati razlicita imena!", "Greska", MessageBoxButtons.OK);
             }
+        }
+
+        public bool FindPlayer(string name)
+        {
+            var score = 0;
+            var found = false;
+
+            String[] rows;
+            using (var sr = new StreamReader("Data/SavedScores.txt"))
+            {
+                rows = Regex.Split(sr.ReadToEnd(), "\n");
+            }
+            for (int i = 0; i < rows.Length; i++)
+            {
+                if (rows[i].Contains(name))
+                {
+                    found = true;
+                    String[] values = Regex.Split(rows[i]," ");
+                    score = Int32.Parse(values[1]);
+                }
+            }
+
+            if (found)
+            {
+                _players.Add(new Player(name, score));
+                _existingPlayers.Add(_players.Count - 1);
+                return true;
+            }
+            return false;
         }
 
         private bool CheckNames(int i, List<string> names)
