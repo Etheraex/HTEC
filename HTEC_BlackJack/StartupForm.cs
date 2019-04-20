@@ -45,7 +45,7 @@ namespace HTEC_BlackJack
             }
             tmp.Sort();
             var j = 1;
-            for (var i = tmp.Count - 1; i > 0 && j < 11; i--)
+            for (var i = tmp.Count - 1; i >= 0 && j < 11; i--)
             {
                 rankList.AppendText(j.ToString() + ": " + tmp[i].ToString() + "\n");
                 j++;

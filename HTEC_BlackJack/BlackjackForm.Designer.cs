@@ -123,12 +123,12 @@
             // 
             // StartRoundBtn
             // 
-            this.StartRoundBtn.Location = new System.Drawing.Point(970, 13);
+            this.StartRoundBtn.Location = new System.Drawing.Point(936, 10);
             this.StartRoundBtn.Margin = new System.Windows.Forms.Padding(2);
             this.StartRoundBtn.Name = "StartRoundBtn";
-            this.StartRoundBtn.Size = new System.Drawing.Size(82, 19);
+            this.StartRoundBtn.Size = new System.Drawing.Size(125, 19);
             this.StartRoundBtn.TabIndex = 9;
-            this.StartRoundBtn.Text = "StartRound";
+            this.StartRoundBtn.Text = "Sledeca runda";
             this.StartRoundBtn.UseVisualStyleBackColor = true;
             this.StartRoundBtn.Click += new System.EventHandler(this.StartRoundBtn_Click);
             // 
