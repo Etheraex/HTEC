@@ -11,6 +11,8 @@ namespace HTEC_BlackJack_Data
     {
         List<Card> _deckCards;
 
+        public int Count { get { return _deckCards.Count;} }
+
         private Deck()
         {
             _deckCards = new List<Card>();
@@ -43,9 +45,13 @@ namespace HTEC_BlackJack_Data
 
         public Card getCard()
         {
-            Card card = _deckCards[_deckCards.Count-1];
-            _deckCards.RemoveAt(_deckCards.Count - 1);
-            return card;
+            if (_deckCards.Count != 0)
+            {
+                Card card = _deckCards[_deckCards.Count - 1];
+                _deckCards.RemoveAt(_deckCards.Count - 1);
+                return card;
+            }
+            return null;
         }
 
         public void ReturnCard(Card c)

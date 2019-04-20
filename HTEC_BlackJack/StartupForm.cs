@@ -20,7 +20,7 @@ namespace HTEC_BlackJack
         private void StartBtn_Click(object sender, EventArgs e)
         {
             var numPlayers = Convert.ToInt32(Math.Round(NumberPlayers.Value, 0));
-            Form f = new BlackjackForm(this,numPlayers);
+            Form f = new AddPlayersForm(this,numPlayers);
             this.Hide();
             f.ShowDialog();
         }

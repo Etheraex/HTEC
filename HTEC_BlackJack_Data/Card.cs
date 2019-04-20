@@ -21,11 +21,29 @@ namespace HTEC_BlackJack_Data
     {
         private Suits _suit { get; }
         private int _value { get;  }
-        private String _backGround = "../../../Data/Backgrounds/red.png";
-
-        public override String ToString()
+        
+        public override string ToString()
         {
-            return _suit.ToString() + _value.ToString();
+            string value="";
+            switch (_value)
+            {
+                case 11:
+                    value = "A";
+                    break;
+                case 12:
+                    value = "J";
+                    break;
+                case 13:
+                    value = "Q";
+                    break;
+                case 14:
+                    value = "K";
+                    break;
+                default:
+                    value = _value.ToString();
+                    break;
+            }
+            return _suit.ToString() + " " +value;
         }
 
         public Card(String image)
@@ -74,11 +92,11 @@ namespace HTEC_BlackJack_Data
                         case "A":
                             return 11;
                         case "J":
-                            return 10;
+                            return 12;
                         case "Q":
-                            return 10;
+                            return 13;
                         case "K":
-                            return 10;
+                            return 14;
                     }
             }
             return 0;

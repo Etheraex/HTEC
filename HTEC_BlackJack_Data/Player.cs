@@ -8,7 +8,8 @@ public enum PlayerState
 {
     Won,
     Lost,
-    Playing
+    Playing,
+    Waiting
 }
 
 namespace HTEC_BlackJack_Data
@@ -21,10 +22,11 @@ namespace HTEC_BlackJack_Data
         public PlayerState Round { get; set; }
 
         public String Name { get { return _name; } }
+        public int HandCount { get { return _hand.Count; } }
 
-        public Player(String name)
+        public Player(String name, int sum, int score) : base(sum)
         {
-            Score = 0;
+            Score = score;
             _name = name;
             _hand = new List<Card>();
             FinishedDrawing = false;
@@ -47,7 +49,7 @@ namespace HTEC_BlackJack_Data
         public void CheckSum()
         {
             if (Sum < 21)
-                return;
+                Round = PlayerState.Waiting;
             else if (Sum == 21)
             {
                 Round = PlayerState.Won;

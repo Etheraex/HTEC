@@ -16,25 +16,26 @@ namespace HTEC_BlackJack
         private Dealer _dealer;
         private BlackjackForm _form;
 
-        public Blackjack(BlackjackForm f, int numPlayers)
+        public Blackjack(BlackjackForm f, int numPlayers, List<Player> players)
         {
             _form = f;
             _finishedPlayers = 0;
             _players = new List<Player>(numPlayers);
-            List<String> names = new List<String>{ "Mika", "Zika", "Pera", "Laza", "Stojan", "Zoran" };
-            for (int i = 0; i < numPlayers; i++)
-            {
-                _players.Add(new Player(names[i]));
-            }
-            _dealer = new Dealer();
+            // List<String> names = new List<String>{ "Mika", "Zika", "Pera", "Laza", "Stojan", "Zoran" };
+            //for (int i = 0; i < numPlayers; i++)
+            //    _players.Add(new Player(names[i]));
+            _players = players;
+            _dealer = new Dealer(0);
         }
 
         public void TakeCard()
         {
-            if (!_players[_currentPlayer].FinishedDrawing)
+            Card drawnCard = HTEC_BlackJack_Data.Deck.DeckInstance.getCard();
+            if (drawnCard != null)
             {
-                Card drawnCard = HTEC_BlackJack_Data.Deck.DeckInstance.getCard();
                 _players[_currentPlayer].addCardToHand(drawnCard);
+                _form.DisplayDrawnCard(_currentPlayer,_players[_currentPlayer].Name, drawnCard);
+                CheckSum();
             }
         }
 
@@ -52,6 +53,13 @@ namespace HTEC_BlackJack
                 AssignPoints(_dealer.DealersMove());
             else
                 _form.EnableCardTaking();
+            NextPlayer(false);
+        }
+
+        public void CheckSum()
+        {
+            if (_players[_currentPlayer].Sum >= 21)
+                Finish();
         }
 
         private void AssignPoints(int dealersSum)
@@ -73,7 +81,7 @@ namespace HTEC_BlackJack
 
             foreach (var p in _players)
             {
-                if (p.Round == PlayerState.Playing)
+                if (p.Round == PlayerState.Waiting)
                 {
                     if (!check)
                         p.AddPoints(points);
@@ -91,7 +99,6 @@ namespace HTEC_BlackJack
 
         public void NextPlayer(bool first)
         {
-            _form.DisableNextButton();
             if (_finishedPlayers != _players.Count)
             {
                 if (first)
@@ -103,6 +110,8 @@ namespace HTEC_BlackJack
                         NextPlayer(false);
                 }
                 _form.UpdateCurrentPlayer(_players[_currentPlayer].Name);
+                if(_players[_currentPlayer].HandCount < 2)
+                    _form.GiveStartingCards();
             }
         }
 
