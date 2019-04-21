@@ -214,7 +214,7 @@ namespace HTEC_BlackJack
                     break;
             }
             
-            log.AppendText(player + " izvukao " + c.ToString() + "\n");
+            log.AppendText(player + " izvukao/la " + c.ToString() + "\n");
         }
     }
 }
