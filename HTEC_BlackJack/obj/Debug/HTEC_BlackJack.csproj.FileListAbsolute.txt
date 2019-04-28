@@ -1,0 +1,15 @@
+C:\Users\Mladen\Desktop\Projekat\HTEC_BlackJack\bin\Debug\HTEC_BlackJack.exe.config
+C:\Users\Mladen\Desktop\Projekat\HTEC_BlackJack\bin\Debug\HTEC_BlackJack.exe
+C:\Users\Mladen\Desktop\Projekat\HTEC_BlackJack\bin\Debug\HTEC_BlackJack.pdb
+C:\Users\Mladen\Desktop\Projekat\HTEC_BlackJack\bin\Debug\HTEC_BlackJack_Data.dll
+C:\Users\Mladen\Desktop\Projekat\HTEC_BlackJack\bin\Debug\HTEC_BlackJack_Data.pdb
+C:\Users\Mladen\Desktop\Projekat\HTEC_BlackJack\obj\Debug\HTEC_BlackJack.csprojAssemblyReference.cache
+C:\Users\Mladen\Desktop\Projekat\HTEC_BlackJack\obj\Debug\HTEC_BlackJack.AddPlayersForm.resources
+C:\Users\Mladen\Desktop\Projekat\HTEC_BlackJack\obj\Debug\HTEC_BlackJack.BlackjackForm.resources
+C:\Users\Mladen\Desktop\Projekat\HTEC_BlackJack\obj\Debug\HTEC_BlackJack.Properties.Resources.resources
+C:\Users\Mladen\Desktop\Projekat\HTEC_BlackJack\obj\Debug\HTEC_BlackJack.StartupForm.resources
+C:\Users\Mladen\Desktop\Projekat\HTEC_BlackJack\obj\Debug\HTEC_BlackJack.csproj.GenerateResource.cache
+C:\Users\Mladen\Desktop\Projekat\HTEC_BlackJack\obj\Debug\HTEC_BlackJack.csproj.CoreCompileInputs.cache
+C:\Users\Mladen\Desktop\Projekat\HTEC_BlackJack\obj\Debug\HTEC_BlackJack.csproj.CopyComplete
+C:\Users\Mladen\Desktop\Projekat\HTEC_BlackJack\obj\Debug\HTEC_BlackJack.exe
+C:\Users\Mladen\Desktop\Projekat\HTEC_BlackJack\obj\Debug\HTEC_BlackJack.pdb
